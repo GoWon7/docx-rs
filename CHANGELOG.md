@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## docx-wasm@0.0.278-rc27 (17. Jan, 2024)
+
+- Support part of `pPrDefault`.
+
+## docx-wasm@0.0.278-rc26 (1. Dec, 2023)
+
+- read sectPr.type as `section_type`.
+
+## docx-wasm@0.0.278-rc23 (21. Aug, 2023)
+
+- escape author in del/ins.
+
+## docx-wasm@0.0.278-rc19 (9. Aug, 2023)
+
+- use i32 for line instead of u32.
+
+## docx-wasm@0.0.278-rc18 (24. Jul, 2023)
+
+- read caps.
+
 ## docx-wasm@0.0.278-rc16 (14. Jul, 2023)
 
 - Improve read numbering types.

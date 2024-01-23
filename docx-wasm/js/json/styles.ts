@@ -14,12 +14,16 @@ export type StyleJSON = {
   tableCellProperty: TableCellPropertyJSON;
   basedOn: string | null;
   link?: string | null | undefined;
+  next?: string | null;
 };
 
 export type StylesJSON = {
   docDefaults: {
     runPropertyDefault: {
       runProperty: RunPropertyJSON;
+    };
+    paragraphPropertyDefault: {
+      paragraphProperty: ParagraphPropertyJSON;
     };
   };
   styles: StyleJSON[];

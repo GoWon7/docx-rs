@@ -31,10 +31,12 @@ pub enum XMLElement {
     Highlight,
     VertAlign,
     Bold,
+    Caps,
     RunStyle,
     BoldCs,
     Break,
     Tab,
+    Tabs,
     Sym,
     ParagraphStyle,
     ParagraphPropertyChange,
@@ -155,6 +157,7 @@ pub enum XMLElement {
     TitlePg,
     EvenAndOddHeaders,
     StructuredDataTag,
+    Type,
     Unsupported,
 }
 
@@ -259,6 +262,7 @@ impl FromStr for XMLElement {
             "rStyle" => Ok(XMLElement::RunStyle),
             "b" => Ok(XMLElement::Bold),
             "bCs" => Ok(XMLElement::BoldCs),
+            "caps" => Ok(XMLElement::Caps),
             "i" => Ok(XMLElement::Italic),
             "iCs" => Ok(XMLElement::ItalicCs),
             "vanish" => Ok(XMLElement::Vanish),
@@ -266,6 +270,7 @@ impl FromStr for XMLElement {
             "italic" => Ok(XMLElement::Italic),
             "name" => Ok(XMLElement::Name),
             "tab" => Ok(XMLElement::Tab),
+            "tabs" => Ok(XMLElement::Tabs),
             "br" => Ok(XMLElement::Break),
             "ind" => Ok(XMLElement::Indent),
             "numPr" => Ok(XMLElement::NumberingProperty),
@@ -385,6 +390,7 @@ impl FromStr for XMLElement {
             "titlePg" => Ok(XMLElement::TitlePg),
             "evenAndOddHeaders" => Ok(XMLElement::EvenAndOddHeaders),
             "sdt" => Ok(XMLElement::StructuredDataTag),
+            "type" => Ok(XMLElement::Type),
             _ => Ok(XMLElement::Unsupported),
         }
     }
@@ -498,6 +504,6 @@ impl FromStr for PicXMLElement {
 
 pub trait ElementReader {
     fn read<R: Read>(r: &mut EventReader<R>, attrs: &[OwnedAttribute]) -> Result<Self, ReaderError>
-        where
-            Self: std::marker::Sized;
+    where
+        Self: std::marker::Sized;
 }
